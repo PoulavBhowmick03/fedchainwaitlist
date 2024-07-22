@@ -14,13 +14,13 @@ const DownloadBraavosWallet = () => {
       <div className="flex justify-between items-center gap-7 sm:gap-40">
         <div className="flex flex-col items-center">
           <Image src={windowsLogo} width={50} height={50} alt="Windows" />
-          <a href="https://www.braavos.com/windows-download">
+          <a href="https://braavos.app/">
             <div className="text-blue-600 dark:text-blue-400 font-semibold mt-2">Download for Windows</div>
           </a>
         </div>
         <div className="flex flex-col items-center">
           <Image src={Playstore} width={50} height={50} className='' alt="Playstore" />
-          <a href="https://play.google.com/store/apps/details?id=com.braavos">
+          <a href="https://play.google.com/store/apps/details?id=app.braavos.wallet">
             <div className="text-blue-600 dark:text-blue-400 font-semibold mt-2">Download on Playstore</div>
           </a>
         </div>
