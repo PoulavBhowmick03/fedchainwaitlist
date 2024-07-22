@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/mydatabase';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/nextjs-mongodb';
 
 let isConnected = false;
 
@@ -31,8 +31,8 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  wallet: {
-    type: String,
+  mobileNumber: {
+    type: Number,
     required: true,
   }
 });
@@ -46,12 +46,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Failed to connect to database' }, { status: 500 });
     }
 
-    const { name, email, wallet } = await request.json();
-    if (!name || !email || !wallet) {
+    const { name, email, mobileNumber } = await request.json();
+    if (!name || !email || !mobileNumber) {
       return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
     }
 
-    const user = new User({ name, email, wallet });
+    const user = new User({ name, email, mobileNumber });
     await user.save();
 
     return NextResponse.json({ message: 'User created successfully' }, { status: 201 });

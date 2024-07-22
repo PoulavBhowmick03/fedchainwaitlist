@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export function SignupForm() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [wallet, setWallet] = useState("");
+    const [mobileNumber, setMobileNumber] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState(false);
@@ -15,7 +15,7 @@ export function SignupForm() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!name || !email || !wallet) {
+        if (!name || !email || !mobileNumber) {
             setError('All fields are required');
             return;
         }
@@ -28,7 +28,7 @@ export function SignupForm() {
             const response = await fetch("/api/signup", {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, wallet })
+                body: JSON.stringify({ name, email, mobileNumber })
             });
 
             if (!response.ok) {
@@ -44,7 +44,7 @@ export function SignupForm() {
             // Clear the form after successful submission
             setName('');
             setEmail('');
-            setWallet('');
+            setMobileNumber('');
         } catch (error) {
             console.error('Error submitting form:', error);
             setError('Failed to submit form. Please try again.');
@@ -79,13 +79,13 @@ export function SignupForm() {
                     />
                 </LabelInputContainer>
                 <LabelInputContainer className="mb-4">
-                    <Label htmlFor="wallet">Wallet Address</Label>
+                    <Label htmlFor="mobileNumber">Phone Number</Label>
                     <Input
-                        id="wallet"
-                        value={wallet}
-                        onChange={(e) => setWallet(e.target.value)}
-                        placeholder="0x..."
-                        type="text"
+                        id="mobileNumber"
+                        value={mobileNumber}
+                        onChange={(e) => setMobileNumber(e.target.value)}
+                        placeholder="XXXXXXXXXX"
+                        type="number"
                     />
                 </LabelInputContainer>
 
