@@ -4,6 +4,8 @@ import { Header } from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import starknet from "./starknet-token-strk-logo.png"
+import Navbar from "@/components/Navbar";
+
 export default function Home() {
   return (
     <div className="h-screen w-full flex flex-col justify-between relative dark:bg-gray-950 bg-white dark:bg-dot-white/[0.3] bg-dot-black/[0.3] overflow-hidden">
@@ -33,15 +35,4 @@ export default function Home() {
   );
 }
 
-const Navbar = () => {
-  return (
-    <nav className="absolute top-3 sm:top-2 left-1/2 transform -translate-x-1/2 w-96 flex justify-center bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-full px-6 py-3 shadow-lg">
-      <ul className="flex space-x-6 text-white">
-        <li><Link href="#" className="hover:text-gray-300 cursor-pointer transition-colors">Home</Link></li>
-        <li><Link href="#" className="hover:text-gray-300 cursor-pointer transition-colors">About</Link></li>
-        <li><Link href="#" className="hover:text-gray-300 cursor-pointer transition-colors">Services</Link></li>
-        <li><Link href="#" className="hover:text-gray-300 cursor-pointer transition-colors">Contact</Link></li>
-      </ul>
-    </nav>
-  );
-};
+

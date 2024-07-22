@@ -63,7 +63,7 @@ export function SignupForm() {
                             id="name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            placeholder="Poulav"
+                            placeholder="John David"
                             type="text"
                         />
                     </LabelInputContainer>
@@ -74,7 +74,7 @@ export function SignupForm() {
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="projectmayhem@fc.com"
+                        placeholder="johndavid@gmail.com"
                         type="email"
                     />
                 </LabelInputContainer>
@@ -84,7 +84,7 @@ export function SignupForm() {
                         id="wallet"
                         value={wallet}
                         onChange={(e) => setWallet(e.target.value)}
-                        placeholder="wallet"
+                        placeholder="0x..."
                         type="text"
                     />
                 </LabelInputContainer>
