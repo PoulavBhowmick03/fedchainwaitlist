@@ -18,7 +18,7 @@ export default function Home() {
         </p>
 
         <p className="text-2xl sm:text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 p-2 mb-4 flex items-center justify-center">
-          Get a chance to win 1
+          Get a chance to win 0.1
           <Image src={starknet} width={40} height={40} alt="" className="ml-2" />
         </p>
 
